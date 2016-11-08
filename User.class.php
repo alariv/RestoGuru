@@ -75,7 +75,7 @@ class User
                 $_SESSION["email"]=$emailfromdatabase;
 
                 //suunan uuele lehele
-                header("location: restoData.php");
+                header("location: restoDATA.php");
 
 
             }else {
