@@ -1,5 +1,5 @@
 <?php
-require("restoFUNCTIONS.php");
+require("../restoFUNCTIONS.php");
 
 if (isset($_GET["logout"])) {
 
@@ -12,9 +12,7 @@ if (isset($_GET["logout"])) {
 
 ?>
 
-<!DOCTYPE html>
-<html>
-<head>
+<?php require("../header.php");?>
     <style>
         .red {
             max-width: 500px;
@@ -36,16 +34,14 @@ if (isset($_GET["logout"])) {
     <span class="backout" style="float: right"><a href="?logout=1">Logi välja</a></span>
     <a class="backout" href="restoDATA.php"> < tagasi</a>
 
-    <h1 class="title">Sinu profiil</h1>
+    <h1 class="text-center" style="font-size: 70px;color: dodgerblue">Sinu profiil</h1>
     <br><br>
-    <h1 class="red">Vabandame!</h1>
+    <h1 class="text-center" style="color: maroon">Vabandame!</h1>
     <br><br>
-    <p class="red">Hetkel käivad arendustööd Teie profiili paremaks muutmiseks.</p>
+    <p class="text-center" style="color: maroon;font-size: large;;">Hetkel käivad arendustööd Teie profiili paremaks muutmiseks.</p>
 
     <br><br><br><br><br><br><br><br><br><br>
 
-    <h2 class="red">TÄNAME KANNATLIKKUSE EEST!</h2>
-
-</head>
-</html>
+    <h2 class="text-center" style="color: maroon">TÄNAME KANNATLIKKUSE EEST!</h2>
+<?php require("../footer.php");?>
 

@@ -16,12 +16,12 @@ class Resto
     }
 
 
-function saverestos($restoName, $grade, $comment, $savegender){
+function saverestos($restoName, $grade, $comment, $gender){
 
 
     //yhendus olemas
     //kask
-    $stmt =$this->connection->prepare("INSERT INTO restoranid (restoName,grade,comment,gender) VALUES (?, ?, ?, ?)");
+    $stmt =$this->connection->prepare("INSERT INTO restoranid (restoName,grade,comment,customer_sex) VALUES (?, ?, ?, ?)");
 
     echo $this->connection->error;
     //asendan kysimargid vaartustega
@@ -29,7 +29,7 @@ function saverestos($restoName, $grade, $comment, $savegender){
     //s tahistab stringi
     //i integer
     //d double/float
-    $stmt->bind_param("ssss", $restoName, $grade, $comment, $savegender);
+    $stmt->bind_param("ssss", $restoName, $grade, $comment, $gender);
 
     if($stmt->execute()){
         echo "salvestamine onnestus ";

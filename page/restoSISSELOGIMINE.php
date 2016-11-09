@@ -200,8 +200,8 @@
 
 	)	{
 		
-		$_POST["loginEmail"] = $Helper->cleanInput($_POST["loginEmail"]);
-		$_POST["loginPassword"] = $Helper->cleanInput($_POST["loginPassword"]);
+		$_POST["loginEmail"] = cleanInput($_POST["loginEmail"]);
+		$_POST["loginPassword"] = cleanInput($_POST["loginPassword"]);
 		//login sisse
 		$error = $User->login($_POST["loginEmail"],$_POST["loginPassword"]);
 	}

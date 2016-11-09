@@ -2,16 +2,18 @@
 
 class Helper
 {
+    private $connection;
 
-    function cleanInput($input) {
+    function __construct($mysqli)
+    {
 
-        $input = trim($input);
-        $input = stripslashes($input);
-        $input = htmlspecialchars($input);
-
-        return $input;
+//klassi sees muutujua kasutamiseks $this->
+//this viitab sellele klassile
+        $this->connection = $mysqli;
 
     }
+
+
 
 }
 ?>

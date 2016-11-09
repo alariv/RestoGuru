@@ -11,8 +11,15 @@
     require("class/Resto.class.php");
     $Resto = new Resto($mysqli);
 
-    require("class/Helper.class.php");
-    $Helper = new Helper($mysqli);
+    function cleanInput($input) {
+
+        $input = trim($input);
+        $input = stripslashes($input);
+        $input = htmlspecialchars($input);
+
+        return $input;
+
+    }
 
 	//alustan sessiooni 
 	//$_SESSION muutujad

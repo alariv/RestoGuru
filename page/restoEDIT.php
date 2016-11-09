@@ -5,14 +5,14 @@ require("/home/alarvere/public_html/RestoGuru/restoEDITFUNCTIONS.php");
 if(isset($_GET["delete"])){
 
 
-    $Edit->deleteResto($Helper->cleanInput($_GET["id"]));
+    $Edit->deleteResto(cleanInput($_GET["id"]));
     header("Location: restoDATA.php");
 }
 
 //kas kasutaja uuendab andmeid
 if(isset($_POST["update"])){
 
-    $Edit->updateResto($Helper->cleanInput($_POST["id"]), cleanInput($_POST["grade"]), cleanInput($_POST["comment"]));
+    $Edit->updateResto(cleanInput($_POST["id"]), cleanInput($_POST["grade"]), cleanInput($_POST["comment"]));
 
     header("Location: restoDATA.php?id=".$_POST["id"]."&success=true");
     exit();
@@ -24,6 +24,7 @@ $P = $Edit->getSingleRestoData($_GET["id"]);
 //var_dump($P);
 
 ?>
+<?php require("../header.php");?>
 <style>
     .heading {
         width: 410px;;
@@ -50,8 +51,9 @@ $P = $Edit->getSingleRestoData($_GET["id"]);
 </style>
 <br><br>
 <a href="restoDATA.php" class="backout"> < tagasi </a>
-
-<h2 class="heading">Muuda sissekannet</h2>
+<fieldset style="margin: 0 auto;max-width: 450px">
+<h2 style="color: dodgerblue;font-size: 50px">Muuda sissekannet</h2>
+</fieldset>
 <form class="center" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="post" >
     <input type="hidden" name="id" value="<?=$_GET["id"];?>" >
     <label for="restoName" >Restorani nimi:    </label><?php echo $P->restoName;?><br><br>
@@ -89,6 +91,7 @@ $P = $Edit->getSingleRestoData($_GET["id"]);
 </form>
 
 <br><br>
-<fieldset class="delete">
-<a href="?id=<?=$_GET["id"];?>&delete=true">Kustuta postitus</a>
+<fieldset style="margin: 0 auto;max-width: 170px">
+<a class='btn-default btn-lg' href="?id=<?=$_GET["id"];?>&delete=true">Kustuta postitus</a>
 </fieldset>
+<?php require("../footer.php");?>

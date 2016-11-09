@@ -30,7 +30,7 @@
 		!empty($_POST["comment"])
 	)	{
 		//login sisse
-		$Resto->saverestos($_POST["restoName"],$_POST["grade"],$_POST["comment"],$_SESSION["customer_sex"]);
+		$Resto->saverestos($_POST["restoName"],$_POST["grade"],$_POST["comment"],$_SESSION["gender"]);
 		header("Location: restoDATA.php");
 		exit();
 	}
@@ -132,38 +132,29 @@
 				}
 			</style>
 			<br>
-		<p><span style="float: right" class="logout">
-		<a class='btn-default btn-lg' href="?logout=1">LOGI VALJA</a><br><br>
-                <a class='btn-default btn-sm' href="restoUSER.php"><?=$_SESSION["email"];?></a></span></p>
+
+		<a class='ext-right btn-default btn-lg t' href="?logout=1">LOGI VALJA</a><br><br>
+                <a class='text-right btn-default btn-sm ' href="restoUSER.php"><?=$_SESSION["email"];?></a>
 
 	
-	<h1 class="restoguru">RestoGuru</h1>
-		
-		<p class="welcome"> Tere tulemast <?=$_SESSION["email"];?>!</p>
-	
+	<h1 style="color: dodgerblue;font-size: 70px" class="text-center">RestoGuru</h1>
+
+		<p style="color: dodgerblue;font-size: 25px" class="text-center"> Tere tulemast <?=$_SESSION["email"];?>!</p>
+
 	<br><br>
 		<fieldset style="border-bottom-width: 5px;border-top-width: 5px;border-right-width: 0;border-left-width: 0px" class="center">
 		<form  method="POST">
             <p class="errors"><?php echo $restoNameError; ?></p>
-			<span style="color: lightcoral" class="glyphicon glyphicon-asterisk"><a style="color: dodgerblue">Nimi</a></span>
+			<span style="color: lightcoral" class="glyphicon glyphicon-asterisk"></span><a style="color: dodgerblue"> Nimi</a>
 			<input class="form-control" placeholder="Restorani nimi" name="restoName" type="text">
 			
-			<br><br><span style="color: lightcoral" class="glyphicon glyphicon-asterisk" "></span>
-			<a style="color: dodgerblue">Hinnang:</a><br>
-
-			<div class="dropdown">
-				<button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-					Hinne
-					<span class="caret"></span>
-				</button>
-				<ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-					<li><a type="radio" name="grade" value="1">1</a></li>
-					<li><a type="radio" name="grade" value="2">2</a></li>
-					<li><a type="radio" name="grade" value="3">3</a></li>
-					<li><a type="radio" name="grade" value="4">4</a></li>
-					<li><a type="radio" name="grade" value="5">5</a></li>
-				</ul>
-			</div>
+			<br><span style="color: lightcoral" class="glyphicon glyphicon-asterisk" "></span>
+			<a style="color: dodgerblue"> Hinnang:</a>
+					<input type="radio" name="grade" value="1">1</input>
+					<input type="radio" name="grade" value="2">2</input>
+					<input type="radio" name="grade" value="3">3</input>
+					<input type="radio" name="grade" value="4">4</input>
+					<input type="radio" name="grade" value="5">5</input>
 
 			<!--<input type="radio" name="grade" value="1"> 1<br>
 			<input type="radio" name="grade" value="2"> 2<br>
@@ -171,12 +162,12 @@
 			<input type="radio" name="grade" value="4"> 4<br>
 			<input type="radio" name="grade" value="5" checked> 5-->
 			
-			<br><br>
+			<br>
             <p class="errors"><?php echo $commentError; ?></p>
-			<span style="color: lightcoral" class="glyphicon glyphicon-asterisk"><a style="color: dodgerblue">Kommentaar</a></span>
+			<span style="color: lightcoral" class="glyphicon glyphicon-asterisk"></span><a style="color: dodgerblue"> Kommentaar</a>
 			<input class="form-control" placeholder="kommentaar" name="comment" type="text">
 			
-			<br><br>
+			<br>
 			
 			<input class="buttons" type="submit">
 		
@@ -184,10 +175,10 @@
 
 		</fieldset>
 		
-<h1 style="color: dodgerblue;margin: 0 auto;max-width: 370px;font-size: 40px">Kasutajate tagasiside</h1><br>
+<h1 style="color: dodgerblue;margin: 0 auto;max-width: 370px;font-size: 38px">Kasutajate tagasiside</h1><br>
 	<fieldset style="border-width: 0px;margin: 0 auto;max-width: 370px">
 	<form>
-		<input class="form-control" style="color: dodgerblue" name="q" value="<?=$q;?>">
+		<input class="form-control" style="color: dodgerblue" name="q"  placeholder="Otsi restoranide või hinnete järgi" value="<?=$q;?>">
 		<input style="width: 370px;color: grey;" type="submit" value="Otsi">
 	</form>
 	</fieldset>
@@ -197,24 +188,26 @@
 
 	foreach($person as $P){
 			if($P->grade=="1"){
-				echo '<h3 class="feedback" style="color:red;font-size: 22">'.$P->restoName.'</h3>';
+				echo '<h3 class="feedback" style="color:red;font-size: 22px">'.$P->restoName.'</h3>';
 			}
 			if($P->grade=="2"){
-				echo '<h3 class="feedback" style="color:crimson;font-size: 27">'.$P->restoName.'</h3>';
+				echo '<h3 class="feedback" style="color:crimson;font-size: 27px">'.$P->restoName.'</h3>';
 			}
 			if($P->grade=="3"){
-				echo '<h3 class="feedback" style="color:blueviolet;font-size: 32">'.$P->restoName.'</h3>';
+				echo '<h3 class="feedback" style="color:blueviolet;font-size: 32px">'.$P->restoName.'</h3>';
 			}
 			if($P->grade=="4"){
-				echo '<h3 class="feedback" style="color:slateblue;font-size: 37">'.$P->restoName.'</h3>';
+				echo '<h3 class="feedback" style="color:slateblue;font-size: 37px">'.$P->restoName.'</h3>';
 			}
 			if($P->grade=="5"){
-				echo '<h3 class="feedback" style="color:dodgerblue;font-size: 42">'.$P->restoName.'</h3>';
+				echo '<h3 class="feedback" style="color:dodgerblue;font-size: 42px">'.$P->restoName.'</h3>';
 		}
 		
 	}
 ?></fieldset><br><br><br><br><br><br>
-<h1 class="table-heading;">Kasutajate tagasiside tabel</h1>
+<fieldset style="max-width: 450px;margin: 0 auto">
+<h1 class="text-center" style="color: dodgerblue">Kasutajate tagasiside tabel</h1>
+</fieldset>
 <?php
 
 	$html = "<table style='width: auto'>";
