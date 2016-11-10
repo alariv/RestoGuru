@@ -48,7 +48,7 @@ class User
 
         //kask
         $stmt = $this->connection->prepare("
-			SELECT id, email, password, gender, created
+			SELECT id, email, password, gender, name, created
 			FROM user_sample
 			WHERE email=? 
 		");
@@ -59,7 +59,7 @@ class User
         $stmt->bind_param("s", $email);
 
         //maaran tulpadele muutujad
-        $stmt->bind_result($id, $emailfromdatabase, $passwordfromdatabase, $genderfromdb, $created);
+        $stmt->bind_result($id, $emailfromdatabase, $passwordfromdatabase, $genderfromdb, $namefromdb, $created);
         $stmt->execute();
 
         if($stmt->fetch()) {
@@ -74,6 +74,7 @@ class User
                 $_SESSION["userId"]= $id;
                 $_SESSION["email"]=$emailfromdatabase;
                 $_SESSION["gender"]=$genderfromdb;
+                $_SESSION["name"]=$namefromdb;
 
 
                 //suunan uuele lehele

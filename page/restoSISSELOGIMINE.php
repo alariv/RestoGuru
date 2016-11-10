@@ -263,9 +263,9 @@
 						<input class="form-control" placeholder="telefoni number" name="phonenr" type="number">
 					<p><?php echo $signupgenderError; ?></p><a style="color: dodgerblue">Sugu</a>
 					<br>
-						<input type="radio" name="signupgender" value="male" checked> Male
-						<input type="radio" name="signupgender" value="female"> Female
-						<input type="radio" name="signupgender" value="other"> Other
+						<input type="radio" name="signupgender" value="Mees" checked> Mees
+						<input type="radio" name="signupgender" value="Naine"> Naine
+						<input type="radio" name="signupgender" value="Muu"> Muu
 						<br><br>
 
 							<a style="color: dodgerblue">Soovin RestoGuru soovitusi e-mailile</a>

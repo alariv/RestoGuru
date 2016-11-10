@@ -31,8 +31,8 @@ if (isset($_GET["logout"])) {
             font-size:30px;
         }
     </style>
-    <span class="backout" style="float: right"><a href="?logout=1">Logi välja</a></span>
-    <a class="backout" href="restoDATA.php"> < tagasi</a>
+    <span class='btn-default btn-lg' style="float: right"><a style="color: maroon"" href="?logout=1">Logi välja</a></span>
+    <span style="float: left"><a class='btn-default btn-lg' style="color: maroon" href="restoDATA.php"> < tagasi</a></span>
 
     <h1 class="text-center" style="font-size: 70px;color: dodgerblue">Sinu profiil</h1>
     <br><br>

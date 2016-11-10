@@ -133,13 +133,13 @@
 			</style>
 			<br>
 
-		<a class='ext-right btn-default btn-lg t' href="?logout=1">LOGI VALJA</a><br><br>
-                <a class='text-right btn-default btn-sm ' href="restoUSER.php"><?=$_SESSION["email"];?></a>
+		<span style="float: right"><a class='btn-default btn-lg' href="?logout=1" style="color: maroon">LOGI VALJA</a></span><br><br>
+		<span style="float: right"><a class='btn-default btn-sm' href="restoUSER.php" style="color: maroon"><?=$_SESSION["email"];?></span></a>
 
 	
 	<h1 style="color: dodgerblue;font-size: 70px" class="text-center">RestoGuru</h1>
 
-		<p style="color: dodgerblue;font-size: 25px" class="text-center"> Tere tulemast <?=$_SESSION["email"];?>!</p>
+		<p style="color: dodgerblue;font-size: 25px" class="text-center"> Tere <?=$_SESSION["name"];?>!</p>
 
 	<br><br>
 		<fieldset style="border-bottom-width: 5px;border-top-width: 5px;border-right-width: 0;border-left-width: 0px" class="center">
@@ -178,14 +178,13 @@
 <h1 style="color: dodgerblue;margin: 0 auto;max-width: 370px;font-size: 38px">Kasutajate tagasiside</h1><br>
 	<fieldset style="border-width: 0px;margin: 0 auto;max-width: 370px">
 	<form>
-		<input class="form-control" style="color: dodgerblue" name="q"  placeholder="Otsi restoranide või hinnete järgi" value="<?=$q;?>">
+		<input class="form-control" style="color: dodgerblue" name="q"  placeholder="Otsi restoranide, hinnete või kommentaari järgi" value="<?=$q;?>">
 		<input style="width: 370px;color: grey;" type="submit" value="Otsi">
 	</form>
 	</fieldset>
 	<br><br>
 	<fieldset style="border-bottom-width: 15px;border-top-width: 15px;border-right-width: 0;border-left-width: 0px">
 <?php
-
 	foreach($person as $P){
 			if($P->grade=="1"){
 				echo '<h3 class="feedback" style="color:red;font-size: 22px">'.$P->restoName.'</h3>';
@@ -261,7 +260,7 @@
 			$html .= '<td style="background-color: lightskyblue">'.$P->comment."</td>";
 			$html .= '<td style="background-color: lightblue">'.$P->gender."</td>";
 			$html .= '<td style="background-color: lightskyblue">'.$P->created."</td>";
-        $html .= "<td style='background-color: lightblue'><a class='btn-default btn-sm' href='restoEDIT.php?id=".$P->id."'><span class='glyphicon glyphicon-pencil'></span></a></td>";
+        $html .= "<td style='background-color: lightblue'><a class='btn-default btn-sm' href='restoEDIT.php?id=".$P->id."'><span style='color:lightcoral' class='glyphicon glyphicon-pencil'></span></a></td>";
 		$html .= "</tr>";
 		
 	}

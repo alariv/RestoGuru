@@ -50,7 +50,7 @@ $P = $Edit->getSingleRestoData($_GET["id"]);
     }
 </style>
 <br><br>
-<a href="restoDATA.php" class="backout"> < tagasi </a>
+<a class='btn-default btn-sm' href="restoDATA.php" style="font-size: 30px;color: maroon"> < tagasi </a>
 <fieldset style="margin: 0 auto;max-width: 450px">
 <h2 style="color: dodgerblue;font-size: 50px">Muuda sissekannet</h2>
 </fieldset>
