@@ -50,7 +50,7 @@ $P = $Edit->getSingleRestoData($_GET["id"]);
     }
 </style>
 <br><br>
-<a class='btn-default btn-sm' href="restoDATA.php" style="font-size: 30px;color: maroon"> < tagasi </a>
+<a class='btn-info btn-sm' href="restoDATA.php" style="color: white"> < tagasi </a>
 <fieldset style="margin: 0 auto;max-width: 450px">
 <h2 style="color: dodgerblue;font-size: 50px">Muuda sissekannet</h2>
 </fieldset>
@@ -84,14 +84,15 @@ $P = $Edit->getSingleRestoData($_GET["id"]);
     <input type="radio" name="grade" value="5" ><b style="color: dodgerblue">5</b>
 
     <br><br>
-    <label for="comment" >kommentaar:   </label>
-    <input id="comment" name="comment" type="text" value="<?=$P->comment;?>"><br><br>
+    <div class="form-group">
+        <label for="comment">Kommentaar:</label>
+        <textarea class="form-control" rows="5" id="comment" name="comment" placeholder="<?=$P->comment;?>"></textarea>
+    </div><br><br>
 
-    <input class="buttons" type="submit" name="update" value="Salvesta">
+    <p class="text-center"><button type="submit" name="update" value="Salvesta" class="btn-warning btn-lg" style="width: 150px">
+    <span class="glyphicon glyphicon-"></span>Salvesta</button></p>
 </form>
 
 <br><br>
-<fieldset style="margin: 0 auto;max-width: 170px">
-<a class='btn-default btn-lg' href="?id=<?=$_GET["id"];?>&delete=true">Kustuta postitus</a>
-</fieldset>
+<p class="text-center"><a class='btn-danger btn-lg' href="?id=<?=$_GET["id"];?>&delete=true"><span class="glyphicon glyphicon-trash"></span></a></p>
 <?php require("../footer.php");?>

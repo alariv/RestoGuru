@@ -168,8 +168,8 @@
 		//echo "sugu: ".$signupgender."<br>";
         //echo "telefoni number: ".$phonenr."<br>";
 		
-		$signupEmail = $Helper->cleanInput($signupEmail);
-		$password = $Helper->cleanInput($password);
+		$signupEmail = cleanInput($signupEmail);
+		$password = cleanInput($password);
 		$User->signup($signupEmail, $password, $signupName, $signupLName, $signupage, $phonenr, $signupgender);
 		
 	}
@@ -216,7 +216,7 @@
 
 
 
-			<div class="col-sm-6 col-md-3">
+			<div class="col-sm-6 col-md-3 col-sm-offset-4 col-md-offset-3">
 
 				<h2>Logi sisse</h2>
 
@@ -233,14 +233,14 @@
 
 
 						<br><br>
-						<p class="buttons">
-							<input class="btn btn-info" type="submit">
 
-						</p>
+					<p class="text-center"><button type="submit" class="btn btn-info">Logi sisse
+							<span class="glyphicon glyphicon-log-in"></span>
+						</button></p>
 
 				</form>
 				</div>
-					<div class="col-sm-4 col-md-3 col-sm-offset-4 col-md-offset-6">
+					<div class="col-sm-4 col-md-3 col-sm-offset-4 col-md-offset-0">
 
 				<h1>Loo kasutaja</h1>
 
@@ -250,18 +250,24 @@
 
 					<p><?php echo $signupNameError; ?></p><a style="color: dodgerblue"><span style="color: lightcoral" class="glyphicon glyphicon-asterisk"></span>Eesnimi</a><br>
 						<input class="form-control" placeholder="Eesnimi" name="signupName" type="text"  value = "<?=$signupName;?>">
+
 					<p ><?php echo $signupLNameError; ?></p><a style="color: dodgerblue"><span style="color: lightcoral" class="glyphicon glyphicon-asterisk"></span>Perekonnanimi</a><br>
 						<input class="form-control" placeholder="Perekonnanimi" name="signupLName" type="text" value = "<?=$signupLName;?>">
+
 					<p><?php echo $signupEmailError; ?></p><a style="color: dodgerblue"><span style="color: lightcoral" class="glyphicon glyphicon-asterisk"></span>E-mail</a><br>
 						<input class="form-control" placeholder="E-mail" name="signupEmail" type="email"  value = "<?=$signupEmail;?>">
+
 					<p><?php echo $signupPasswordError; ?></p><a style="color: dodgerblue"><span style="color: lightcoral" class="glyphicon glyphicon-asterisk"></span>Parool</a><br>
 						<input class="form-control" placeholder="Parool" name="signupPassword" type="password"><br>
 						<input class="form-control" placeholder="Korda parooli" name="signupPassword2" type="password">
+
 					<p><?php echo $signupageError; ?></p><a style="color: dodgerblue"><span style="color: lightcoral" class="glyphicon glyphicon-asterisk"></span>Vanus</a>
 						<input  class="form-control" placeholder="Vanus" name="signupage" type="text"  value = "<?=$signupage;?>">
+
 					<a style="color: dodgerblue"><span style="color: lightcoral" class="glyphicon glyphicon-asterisk"></span>Telefoni number</a>
 						<input class="form-control" placeholder="telefoni number" name="phonenr" type="number">
-					<p><?php echo $signupgenderError; ?></p><a style="color: dodgerblue">Sugu</a>
+
+					<p><?php echo $signupgenderError; ?></p><a style="color: dodgerblue"><span style="color: lightcoral" class="glyphicon glyphicon-asterisk"></span>Sugu</a>
 					<br>
 						<input type="radio" name="signupgender" value="Mees" checked> Mees
 						<input type="radio" name="signupgender" value="Naine"> Naine
@@ -275,9 +281,9 @@
 
 						<br><br>
 
-						<p class="buttons">
-							<input class="btn btn-info" type="submit" value="Loo kasutaja">
-						</p>
+					<p class="text-center"><button type="submit" class="btn btn-success">Loo kasutaja
+							<span class="glyphicon glyphicon-check"></span>
+						</button></p>
 
 						<br>
 

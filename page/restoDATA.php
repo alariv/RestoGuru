@@ -83,24 +83,6 @@
 		
 			
 			<style>
-				.restoguru {
-                min-width: 50px;
-				max-width: 300px;
-				color:dodgerblue;
-				font-size: 70px;
-				margin: 0 auto;
-				}
-				.logout {
-				min-width: 150px;
-				max-width: 500px;
-				color:dodgerblue;
-				}
-				.welcome{
-					font-size:30px;
-					max-width: 400px;
-					color:dodgerblue;
-					margin: 0 auto;
-				}
                 .errors {
                     max-width: 150px;
                     color:red;
@@ -117,24 +99,14 @@
 					margin: 0 auto;
 					max-width: 300px;
 				}
-				.table-heading{
-					margin: 0 auto;
-					max-width: 380px;
-				}
-				.buttons{
-					color: grey;
-					margin: 0 auto;
-					width: 300px;
-					height: 50px;
-				}
 				.feedback{
 					float:left;
 				}
 			</style>
 			<br>
 
-		<span style="float: right"><a class='btn-default btn-lg' href="?logout=1" style="color: maroon">LOGI VALJA</a></span><br><br>
-		<span style="float: right"><a class='btn-default btn-sm' href="restoUSER.php" style="color: maroon"><?=$_SESSION["email"];?></span></a>
+		<span style="float: right"><a class='btn-danger btn-sm' href="?logout=1" style="color: white"><span class="glyphicon glyphicon-log-out"></span>  Logi välja</a></span><br><br>
+		<span style="float: right"><a class='btn-warning btn-sm' href="restoUSER.php" style="color: white"><span class="glyphicon glyphicon-user"></span> <?=$_SESSION["name"];?></span></a>
 
 	
 	<h1 style="color: dodgerblue;font-size: 70px" class="text-center">RestoGuru</h1>
@@ -155,31 +127,30 @@
 					<input type="radio" name="grade" value="3">3</input>
 					<input type="radio" name="grade" value="4">4</input>
 					<input type="radio" name="grade" value="5">5</input>
-
-			<!--<input type="radio" name="grade" value="1"> 1<br>
-			<input type="radio" name="grade" value="2"> 2<br>
-			<input type="radio" name="grade" value="3"> 3<br>
-			<input type="radio" name="grade" value="4"> 4<br>
-			<input type="radio" name="grade" value="5" checked> 5-->
 			
 			<br>
             <p class="errors"><?php echo $commentError; ?></p>
-			<span style="color: lightcoral" class="glyphicon glyphicon-asterisk"></span><a style="color: dodgerblue"> Kommentaar</a>
-			<input class="form-control" placeholder="kommentaar" name="comment" type="text">
+			<div class="form-group">
+				<span style="color: lightcoral" class="glyphicon glyphicon-asterisk"></span>
+				<a for="comment" style="color: dodgerblue">Kommentaar:</a>
+				<textarea class="form-control" rows="5" id="comment" name="comment" placeholder="Kommentaar"></textarea>
+			</div>
 			
 			<br>
 			
-			<input class="buttons" type="submit">
+			<input class='btn-success btn-lg' style="width: 300px;height: 50px" type="submit">
 		
 		</form>
 
-		</fieldset>
-		
+		</fieldset><br>
+
 <h1 style="color: dodgerblue;margin: 0 auto;max-width: 370px;font-size: 38px">Kasutajate tagasiside</h1><br>
 	<fieldset style="border-width: 0px;margin: 0 auto;max-width: 370px">
 	<form>
-		<input class="form-control" style="color: dodgerblue" name="q"  placeholder="Otsi restoranide, hinnete või kommentaari järgi" value="<?=$q;?>">
-		<input style="width: 370px;color: grey;" type="submit" value="Otsi">
+		<input class="form-control" style="color: dodgerblue" name="q"  placeholder="Otsi restoranide, hinnete või kommentaari järgi" value="<?=$q;?>"><br>
+		<p class="text-center"><button type="submit" class="btn btn-info" style="width: 370px">
+			<span class="glyphicon glyphicon-search"></span> Search
+		</button></p>
 	</form>
 	</fieldset>
 	<br><br>
@@ -260,7 +231,7 @@
 			$html .= '<td style="background-color: lightskyblue">'.$P->comment."</td>";
 			$html .= '<td style="background-color: lightblue">'.$P->gender."</td>";
 			$html .= '<td style="background-color: lightskyblue">'.$P->created."</td>";
-        $html .= "<td style='background-color: lightblue'><a class='btn-default btn-sm' href='restoEDIT.php?id=".$P->id."'><span style='color:lightcoral' class='glyphicon glyphicon-pencil'></span></a></td>";
+        $html .= "<td style='background-color: lightblue;padding: 0px'><a class='btn btn-outline-danger btn-md' href='restoEDIT.php?id=".$P->id."'><span style='color:red;' class='glyphicon glyphicon-edit'></span></a></td>";
 		$html .= "</tr>";
 		
 	}
