@@ -1,6 +1,6 @@
 <?php
-require("/home/alarvere/public_html/RestoGuru/restoFUNCTIONS.php");
-require("/home/alarvere/public_html/RestoGuru/restoEDITFUNCTIONS.php");
+require("../restoFUNCTIONS.php");
+require("../restoEDITFUNCTIONS.php");
 
 if(isset($_GET["delete"])){
 
@@ -86,7 +86,7 @@ $P = $Edit->getSingleRestoData($_GET["id"]);
     <br><br>
     <div class="form-group">
         <label for="comment">Kommentaar:</label>
-        <textarea class="form-control" rows="5" id="comment" name="comment" placeholder="<?=$P->comment;?>"></textarea>
+        <textarea class="form-control" rows="5" id="comment" name="comment"><?=$P->comment;?></textarea>
     </div><br><br>
 
     <p class="text-center"><button type="submit" name="update" value="Salvesta" class="btn-warning btn-lg" style="width: 150px">

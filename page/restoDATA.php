@@ -1,5 +1,5 @@
 <?php
-	require("/home/alarvere/public_html/RestoGuru/restoFUNCTIONS.php");
+	require("../restoFUNCTIONS.php");
 
 	if(!isset ($_SESSION["userId"])) {
 		

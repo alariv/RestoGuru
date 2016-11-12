@@ -1,6 +1,6 @@
 <?php
 	//votab ja kopeerib faili sisu
-	require("/home/alarvere/public_html/RestoGuru/restoFUNCTIONS.php");
+	require("../restoFUNCTIONS.php");
 
 	
 	//kas kasutaja on sisse loginud
