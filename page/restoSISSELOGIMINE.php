@@ -271,7 +271,6 @@
 					<br>
 						<input type="radio" name="signupgender" value="Mees" checked> Mees
 						<input type="radio" name="signupgender" value="Naine"> Naine
-						<input type="radio" name="signupgender" value="Muu"> Muu
 						<br><br>
 
 							<a style="color: dodgerblue">Soovin RestoGuru soovitusi e-mailile</a>
@@ -288,9 +287,9 @@
 						<br>
 
 
-					<audio autoplay loop >
+					<!--<audio controls autoplay loop >
 						<source src="intro.mp3" type="audio/mpeg"  >;
-					</audio>
+					</audio>-->
 
 
 
@@ -299,4 +298,5 @@
 				</div>
 			</div>
 		</div>
+
 <?php require("../footer.php");?>

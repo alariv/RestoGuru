@@ -29,7 +29,7 @@
 		!empty($_POST["restoName"]) &&
 		!empty($_POST["comment"])
 	)	{
-		//login sisse
+
 		$Resto->saverestos($_POST["restoName"],$_POST["grade"],$_POST["comment"],$_SESSION["gender"]);
 		header("Location: restoDATA.php");
 		exit();
@@ -102,14 +102,15 @@
 				.feedback{
 					float:left;
 				}
+
 			</style>
 			<br>
 
-		<span style="float: right"><a class='btn-danger btn-sm' href="?logout=1" style="color: white"><span class="glyphicon glyphicon-log-out"></span>  Logi välja</a></span><br><br>
+		<span style="float: right"><a class='btn-danger	 btn-sm' href="?logout=1" style="color: white"><span class="glyphicon glyphicon-log-out"></span>  Logi välja</a></span><br><br>
 		<span style="float: right"><a class='btn-warning btn-sm' href="restoUSER.php" style="color: white"><span class="glyphicon glyphicon-user"></span> <?=$_SESSION["name"];?></span></a>
 
 	
-	<h1 style="color: dodgerblue;font-size: 70px" class="text-center">RestoGuru</h1>
+	<h1 style="color: dodgerblue;font-size: 70px" class="text-center"><b>RestoGuru</b></h1>
 
 		<p style="color: dodgerblue;font-size: 25px" class="text-center"> Tere <?=$_SESSION["name"];?>!</p>
 
@@ -126,7 +127,7 @@
 					<input type="radio" name="grade" value="2">2</input>
 					<input type="radio" name="grade" value="3">3</input>
 					<input type="radio" name="grade" value="4">4</input>
-					<input type="radio" name="grade" value="5">5</input>
+					<input type="radio" name="grade" value="5" checked>5</input>
 			
 			<br>
             <p class="errors"><?php echo $commentError; ?></p>
@@ -231,7 +232,8 @@
 			$html .= '<td style="background-color: lightskyblue">'.$P->comment."</td>";
 			$html .= '<td style="background-color: lightblue">'.$P->gender."</td>";
 			$html .= '<td style="background-color: lightskyblue">'.$P->created."</td>";
-        $html .= "<td style='background-color: lightblue;padding: 0px'><a class='btn btn-outline-danger btn-md' href='restoEDIT.php?id=".$P->id."'><span style='color:red;' class='glyphicon glyphicon-edit'></span></a></td>";
+        $html .= "<td style='background-color: lightblue;padding: 0px'><a class='btn btn-outline-danger btn-md' href='restoEDIT.php?id=".$P->id."'>
+        <span style='color:red;' class='glyphicon glyphicon-edit'></span></a></td>";
 		$html .= "</tr>";
 		
 	}
@@ -239,7 +241,7 @@
 	echo $html;
 	
 ?>
-<audio fadein autoplay loop >
+<!--<audio controls autoplay loop >
     <source src="firstrain.mp3" type="audio/mpeg"  >;
-</audio>
+</audio>-->
 <?php require("../footer.php");?>

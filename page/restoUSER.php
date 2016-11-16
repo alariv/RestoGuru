@@ -9,6 +9,16 @@ if (isset($_GET["logout"])) {
 }
 
 
+if (isset ($_POST ["image"])) {
+    // oli olemas, ehk keegi vajutas nuppu
+    if (empty($_POST ["image"])) {
+        //oli tõesti tühi
+        $imageError = "pead sisestama URL-i!";
+    } else {
+        $image = $_POST ["image"];
+    }
+}
+
 
 ?>
 
@@ -43,5 +53,18 @@ if (isset($_GET["logout"])) {
     <br><br><br><br><br><br><br><br><br><br>
 
     <h2 class="text-center" style="color: maroon">TÄNAME KANNATLIKKUSE EEST!</h2>
+
+<br><br><br>
+
+
+<form>
+        <h2 class="text-center">Pildi aadress</h2>
+<fieldset style="width: 300px; margin: 0 auto">
+        <a class="text-center"><input class="text-center form-control" style="width: 300px" type="url" name="image" placeholder="Sisesta pildi URL"></a>
+    <input class="form-control" type="submit" value="save">
+</fieldset></form>
+
+
+
 <?php require("../footer.php");?>
 

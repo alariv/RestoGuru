@@ -89,8 +89,8 @@ $P = $Edit->getSingleRestoData($_GET["id"]);
         <textarea class="form-control" rows="5" id="comment" name="comment"><?=$P->comment;?></textarea>
     </div><br><br>
 
-    <p class="text-center"><button type="submit" name="update" value="Salvesta" class="btn-warning btn-lg" style="width: 150px">
-    <span class="glyphicon glyphicon-"></span>Salvesta</button></p>
+    <p class="text-center"><button type="submit" name="update" value="Salvesta" class="btn-warning btn-lg " style="width: 150px">
+    <span class="glyphicon glyphicon"></span>Salvesta</button></p>
 </form>
 
 <br><br>
